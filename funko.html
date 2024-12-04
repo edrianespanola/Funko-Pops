@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNKO POPS COLLECTION</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Cooper Black, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #FF8C00, #0057D4); /* Gradient background */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Header Styling */
+        .hero {
+            background: linear-gradient(135deg, rgba(0, 87, 212, 0.9), rgba(255, 140, 0, 0.9)); /* Blue to orange gradient */
+            color: white;
+            padding: 50px 20px; /* Smaller padding to reduce header size */
+            text-align: center;
+            border-bottom: 10px solid #FFA500; /* Orange border at the bottom */
+        }
+
+        .hero .overlay h1 {
+            font-size: 2.8rem; /* Smaller font size */
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .hero .overlay p {
+            font-size: 1.2rem; /* Slightly smaller description */
+            margin: 15px 0;
+            font-weight: lighter;
+        }
+
+        .hero .btn {
+            background-color: #FFA500; /* Orange button */
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .btn:hover {
+            background-color: #FF8C00; /* Darker orange on hover */
+        }
+
+        /* Search Bar Styling */
+        .search-container {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(135deg, #0057D4, #FF8C00); /* Blue to orange gradient */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 30px 0;
+        }
+
+        .search-container input[type="text"] {
+            padding: 12px;
+            width: 40%;
+            font-size: 1.1rem;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-right: 10px;
+        }
+
+        .search-container button {
+            background-color: #FF8C00;
+            color: white;
+            padding: 12px 20px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #0057D4;
+        }
+
+        /* Collection Section */
+        .collection {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(0, 87, 212, 0.8), rgba(255, 140, 0, 0.8)); /* Blue to orange gradient */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 30px 0;
+        }
+
+        .collection h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #FFA500;
+            font-weight: bold;
+        }
+
+        .items {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 270px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .item h3 {
+            font-size: 1.6rem;
+            margin: 15px 0;
+            color: #0057D4;
+        }
+
+        .item p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .item-btn {
+            background-color: #0057D4;
+            color: white;
+            padding: 12px 18px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .item-btn:hover {
+            background-color: #FF8C00;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            margin: 0;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media screen and (max-width: 768px) {
+            .search-container input[type="text"] {
+                width: 70%;
+            }
+
+            .items {
+                flex-direction: column;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="hero">
+        <div class="overlay">
+            <h1>FUNKO POPS COLLECTION</h1>
+            <p>Explore your favorite characters in Funko Pop form!</p>
+            <a href="#collection" class="btn">Shop Now</a>
+        </div>
+    </header>
+
+    <!-- Search Bar Section -->
+    <section class="search-container">
+        <input type="text" id="search" placeholder="Search for Funko Pops...">
+        <button onclick="searchItems()">Search</button>
+    </section>
+
+    <!-- Collection Section -->
+    <section id="collection" class="collection">
+        <h2>Our Collection</h2>
+        <div class="items">
+            <div class="item">
+                <img src="robin.jpg" alt="Robin Funko Pop">
+                <h3>Robin Funko Pop</h3>
+                <p>Price: $15</p>
+                <button class="item-btn">Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="katakuri.jpg" alt="Katakuri Funko Pop">
+                <h3>Katakuri Funko Pop</h3>
+                <p>Price: $15</p>
+                <button class="item-btn">Add to Cart</button>
+            </div>
+            <div class="item">
+                <img src="luffy.jpg" alt="Luffy Funko Pop">
+                <h3>Luffy Funko Pop</h3>
+                <p>Price: $15</p>
+                <button class="item-btn">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 FUNKO POPS COLLECTION. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function searchItems() {
+            var searchQuery = document.getElementById("search").value.toLowerCase();
+            var items = document.querySelectorAll(".item");
+            items.forEach(item => {
+                var itemName = item.querySelector("h3").textContent.toLowerCase();
+                if (itemName.includes(searchQuery)) {
+                    item.style.display = "block";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+
+<script type="module">
+  import Chatbox from 'https://cdn.jsdelivr.net/npm/@chaindesk/embeds@latest/dist/chatbox/index.js';
+
+  const widget = await Chatbox.initBubble({
+    agentId: 'cm49z4ds70kls2056oahdnagn',
+    
+    // optional 
+    // If provided will create a contact for the user and link it to the conversation
+    contact: {
+      firstName: 'John',
+      lastName: 'Doe',
+      email: 'customer@email.com',
+      phoneNumber: '+33612345644',
+      userId: '42424242',
+    },
+    // optional
+    // Override initial messages
+    initialMessages: [
+      'Hello Georges how are you doing today?',
+      'How can I help you ?',
+    ],
+    // optional
+    // Provided context will be appended to the Agent system prompt
+    context: "The user you are talking to is John. Start by Greeting him by his name.",
+  });
+
+  // open the chat bubble
+  widget.open();
+
+  // close the chat bubble
+  widget.close()
+
+  // or 
+  widget.toggle()
+</script>
